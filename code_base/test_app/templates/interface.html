@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>User demo</title>
+  <style>
+    body{font-family:sans-serif;max-width:40rem;margin:2rem auto}
+    label{display:block;margin-top:1rem}
+    input,button{padding:.4rem .6rem;font-size:1rem}
+    ul{margin-top:2rem}
+    .flash{color:red}
+  </style>
+</head>
+<body>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <div class="flash">{{ messages[0] }}</div>
+    {% endif %}
+  {% endwith %}
+
+  <h1>Add a user</h1>
+  <form action="{{ url_for('add') }}" method="post">
+    <label>Name <input name="name" required></label>
+    <label>Email <input type="email" name="email" required></label>
+    <button>Save</button>
+  </form>
+
+  <h2>Existing users</h2>
+  <ul>
+    {% for u in users %}
+      <li>{{ u['id'] }} — {{ u['name'] }} — {{ u['email'] }}</li>
+    {% else %}
+      <li><em>No users yet.</em></li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
