@@ -63,4 +63,4 @@ b) How It All Comes Together
 
 -Renders this information on a web-based user interface.
 
-This creates a self-contained application, simulating how a real-world task manager or data visualization tool would work. The automation of the C program's execution within the Flask environment enhances usability and streamlines the workflow, making the whole project act like a cohesive software product rather than a disjointed collection of scripts. (this can be a little too serious compared to what I actually coded :) )
+This creates a self-contained application, simulating how a real-world task manager or data visualization tool would work. The automation of the C program's execution within the Flask environment enhances usability and streamlines the workflow, making the whole project act like a cohesive software product rather than a disjointed collection of scripts. 
