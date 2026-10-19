@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cvt-dashboard"
+version = "0.1.0"
+description = "A demonstration of a C-to-Flask-to-SQLite snapshot pipeline."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Moldovan Luca" }]
+dependencies = ["Flask>=3.1.3,<4", "Flask-WTF>=1.3,<2"]
+
+[project.optional-dependencies]
+dev = ["build>=1.2,<2", "pytest>=8,<10", "ruff>=0.9,<1"]
+security = ["bandit>=1.9,<2", "pip-audit>=2.10,<3"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+cvt_dashboard = ["schema.sql", "templates/*.html", "native/*.c", "data/*.txt"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+extend-exclude = ["examples"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]

@@ -1,5 +1,7 @@
 OVERVIEW - CVT Project by Moldovan Luca
 
+This repository presents the essential project backbone and its core functionalities for demonstration purposes; it is not the official code used in production.
+
 1) PROJECT STRUCTURE
 
                                                             The web interface
